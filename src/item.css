@@ -1,0 +1,126 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 800px;
+  background-color: gray;
+  box-shadow: 0 1px 5px 0 black;
+  min-height: 200px;
+}
+
+.card > span {
+  position: relative;
+}
+
+.card > span > svg.close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: black;
+  height: 30px;
+  width: 30px;
+}
+
+.card > .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  color: black;
+}
+
+.card > .content > .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card > .content > .head > span {
+  flex: 1;
+  border-right: 1px solid black;
+}
+
+.card > .content > .head > span:last-child {
+  border-right: none;
+}
+
+.card > .content > .body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > .content > .body > .task {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: 300ms ease-in-out;
+}
+
+.card > .content > .body > .task.work {
+  margin-left: 0;
+}
+
+.card > .content > .body > .task.test {
+  margin-left: 33%;
+}
+
+.card > .content > .body > .task.done {
+  margin-left: 66%;
+}
+
+.card > .content > .body > .task.work > span {
+  background-color: #fff4be;
+}
+
+.card > .content > .body > .task.test > span {
+  background-color: #ffa8b2;
+}
+
+.card > .content > .body > .task.done > span {
+  background-color: #caffca;
+}
+
+.card > .content > .body > .task > span {
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px 30px;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+  font-size: 16px;
+}
+
+.card > .content > .body > .task > span > svg {
+  position: absolute;
+  cursor: pointer;
+  top: calc(50% - 12px);
+}
+
+.card > .content > .body > .task > span > svg.left {
+  left: 0;
+}
+
+.card > .content > .body > .task > span > svg.right {
+  right: 0;
+}
+
+.card > .content > .body > .task > span > svg.close {
+  right: 0;
+  color: red;
+}
