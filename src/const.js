@@ -1,33 +1,33 @@
 export const initialState = [
   {
     id: 1,
-    title: "Сидоров Никита Олегович",
+    title: "Константин",
     tasks: [
       {
         id: 1,
-        text: 'Вёрстка',
-        type: 1,
+        text: 'Отчёт',
+        type: 2,
       },
       {
         id: 2,
-        text: 'Работа',
-        type: 3,
+        text: 'Составить договор',
+        type: 1,
       },
     ]
   },
   {
     id: 2,
-    title: "Дмитрий Николаевич",
+    title: "Владимир",
     tasks: [
       {
         id: 1,
-        text: 'Лекция',
-        type: 2,
+        text: 'Оформить ТС',
+        type: 3,
       },
       {
         id: 2,
-        text: 'Курсовая',
-        type: 3,
+        text: 'Копии всех документов по ТС',
+        type: 1,
       },
     ]
   }

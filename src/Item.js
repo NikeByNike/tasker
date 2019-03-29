@@ -45,8 +45,28 @@ const Item = ({isAdmin, item, setItem, delTask, delPerson}) => {
         </div>
         <div className="body">
           {item.tasks.map(task => (
-            <div className={getClass(task.type)}>
+            <div key={task.id} className={getClass(task.type)}>
             <span>
+              {isAdmin ?
+              <>
+                {task.type !== 1
+                  ?
+                  <ArrowLeftDropCircle
+                    className="left"
+                    onClick={() => setType(task.id, task.type-1)}
+                  />
+                  : null}
+              </>
+                : <>
+                  {task.type === 2
+                    ?
+                    <ArrowLeftDropCircle
+                      className="left"
+                      onClick={() => setType(task.id, task.type-1)}
+                    />
+                    : null}
+                </>
+              }
               {(task.type !== 1 && isAdmin)
                 ?
                 <ArrowLeftDropCircle
@@ -71,7 +91,17 @@ const Item = ({isAdmin, item, setItem, delTask, delPerson}) => {
                     />
                 }
                 </>
-              : null}
+              : <>
+                  {
+                    task.type === 1
+                      ?
+                      <ArrowRightDropCircle
+                        className="right"
+                        onClick={() => setType(task.id, task.type + 1)}
+                      />
+                      : null
+                  }
+                </>}
             </span>
             </div>
           ))}

@@ -8,7 +8,7 @@
   border-radius: 5px;
   width: 100%;
   max-width: 800px;
-  background-color: gray;
+  background-image: linear-gradient(-45deg, #929292, #282c34);
   box-shadow: 0 1px 5px 0 black;
   min-height: 200px;
 }
