@@ -47,8 +47,8 @@ const Admin = ({setPerson, setTask, items}) => {
         />
       </div>
       <div>
-        <select placeholder="Работник..." value={select} onChange={e => setSelect(e.target.value)}>
-          <option value="" disabled selected hidden>Работник...</option>
+        <select value={select} onChange={e => setSelect(e.target.value)}>
+          <option value="" disabled hidden>Работник...</option>
           {items.map(item => (
             <option key={item.id} value={item.id}>{item.title}</option>
           ))}
