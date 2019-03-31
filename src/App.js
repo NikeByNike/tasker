@@ -3,10 +3,7 @@ import './App.css';
 import Item from './Item';
 import {initialState} from "./const";
 import Admin from "./Admin";
-
-const hashString = (string) => {
-  return string.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
-};
+import logo from "./logo.svg";
 
 const App = () => {
   const [err, setErr] = useState(false);
@@ -16,7 +13,7 @@ const App = () => {
   const [items, setItems] = useState(initialState);
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (+token === hashString('admin password')) {
+    if (+token === 'admin password') {
       setAdmin(true);
     }
   }, []);
@@ -69,7 +66,7 @@ const App = () => {
 
   const handleLogin = () => {
     if (login === "admin" && password === "password") {
-      localStorage.setItem('token', hashString('admin password'));
+      localStorage.setItem('token', 'admin password');
       setAdmin(true)
     } else setErr(true);
   };
@@ -82,6 +79,9 @@ const App = () => {
     return (
       <div className="App">
         <div className={err ? "header err" : "header"}>
+          <div className="App-logo">
+            <img src={logo} alt=""/>
+          </div>
           {admin
             ?
             <>

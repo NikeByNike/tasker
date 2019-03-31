@@ -1,7 +1,7 @@
 {
   "name": "tasker",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "mdi-material-ui": "^5.10.0",
