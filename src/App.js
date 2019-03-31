@@ -12,6 +12,7 @@ const App = () => {
   const [admin, setAdmin] = useState(false);
   const [items, setItems] = useState(initialState);
   useEffect(() => {
+    console.log("useEffect");
     const token = localStorage.getItem('token');
     if (+token === 'admin password') {
       setAdmin(true);
@@ -19,6 +20,7 @@ const App = () => {
   }, []);
 
   const setItem = (id, newItem) => {
+    console.log("setItem");
     const newItems = items.map(item => {
       if (item.id === id) {
         return {...newItem};
@@ -29,12 +31,14 @@ const App = () => {
   };
 
   const setPerson = (newPerson) => {
+    console.log("setPerson");
     let newItems = [...items];
     newItems.push(newPerson);
     setItems(newItems);
   };
 
   const setTask = (id, newTask) => {
+    console.log("setTask");
     const newItems = items.map(item => {
       if (item.id === +id) {
         let newItem = {...item};
@@ -47,6 +51,7 @@ const App = () => {
   };
 
   const delTask = (personId, id) => {
+    console.log("delTask");
     const newItems = items.map(item => {
       if (item.id === personId) {
         return {
@@ -60,11 +65,13 @@ const App = () => {
   };
 
   const delPerson = (id) => {
+    console.log("delPerson");
     const newItems = items.filter(item => item.id !== id);
     setItems(newItems);
   };
 
   const handleLogin = () => {
+    console.log("handleLogin");
     if (login === "admin" && password === "password") {
       localStorage.setItem('token', 'admin password');
       setAdmin(true)
@@ -72,6 +79,7 @@ const App = () => {
   };
 
   const handleLogout = () => {
+    console.log("handleLogout");
     localStorage.removeItem('token');
     setAdmin(false)
   };
