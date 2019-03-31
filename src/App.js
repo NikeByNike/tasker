@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     console.log("useEffect");
     const token = localStorage.getItem('token');
-    if (+token === 'admin password') {
+    if (token === 'admin password') {
       setAdmin(true);
     }
   }, []);
